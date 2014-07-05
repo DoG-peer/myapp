@@ -1,4 +1,4 @@
-app/my_support
+app/read_support
 ignore
 template
 sample

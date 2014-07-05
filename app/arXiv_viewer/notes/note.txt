@@ -1,0 +1,34 @@
+=begin
+
+ArXiv::Request.new(hash)
+でリクエストのオブジェクトを作る
+getでDocument生成
+
+ArXiv::Entry
+エントリーそれぞれ
+
+ArXiv::Document
+xmlの必要部分を切り出す
+newはxmlを引数にする
+=end
+
+
+# http://export.arxiv.org/api/{method_name}?{parameters}
+#
+# GET, parameters are encoded in the url
+# POST encoded in the HTTP request header
+# Most client libraries support both methods
+#
+# method_name : query
+# これしかない？
+#
+#   parameters     type                    defaults   required  example
+#
+#   search_query   string                  None	      No        all:electron
+#   id_list	       comma-delimited string	 None       No
+#   start	         int                     0          No
+#   max_results    int                     10         No
+#
+#  &でつなげれる
+#
+#

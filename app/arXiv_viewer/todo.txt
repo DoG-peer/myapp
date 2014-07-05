@@ -1,0 +1,4 @@
+favorite.txtを実装
+ignore_wordsを設定
+余計なピリオドとかを消す
+

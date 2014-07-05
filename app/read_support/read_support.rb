@@ -1,6 +1,9 @@
 # coding : SJIS
 require 'fileutils'
 
+THIS_DIR = File::dirname __FILE__
+TEMPLATE_DIR = File::expand_path('template', THIS_DIR)
+
 # Input filename
 if ARGV.join(' ') == ""
   filename = gets.chomp
@@ -40,9 +43,13 @@ begin
   
   # tests
   create_dir "./#{name}/test"
+  
+  #system 'pause'
   %w{.rb .cpp .tex}.each do |ext|
-    test_file = "./#{name}/test/test#{ext}"
-    create_file test_file
+    Dir.glob("#{TEMPLATE_DIR}/*#{ext}").each do |file|
+      test_file = "./#{name}/test/#{File.basename file}"
+      FileUtils.copy_file(file, test_file)
+    end
   end
 
   # concerns
